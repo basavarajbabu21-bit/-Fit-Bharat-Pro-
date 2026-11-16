@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>फिटभारत प्रो (FitBharat Pro) - संपूर्ण फिटनेस, योग एवं दर्द निवारण गाइड</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Sans Devanagari for crisp Hindi typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans Devanagari"', 'sans-serif'],
+                    },
+                    colors: {
+                        darkbg: '#090D16',
+                        cardbg: '#111827',
+                        cardhover: '#1E293B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #090D16;
+            color: #F8FAFC;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #090D16;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        .glass-header {
+            background: rgba(9, 13, 22, 0.88);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-500 selection:text-slate-950 pb-20">
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-40 glass-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-2">
+            <!-- Brand -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 flex items-center justify-center text-slate-950 shadow-lg shadow-emerald-500/20 shrink-0">
+                    <i data-lucide="flame" class="w-6 h-6 stroke-[2.5]"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-1.5">
+                        <h1 class="text-lg sm:text-2xl font-extrabold tracking-tight text-white leading-none">
+                            फिट<span class="text-emerald-400">भारत</span>
+                        </h1>
+                        <span class="text-[10px] sm:text-xs font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">PRO</span>
+                    </div>
+                    <p class="text-[11px] sm:text-xs text-slate-400 mt-0.5">8-इन-1 फिटनेस, योग व दर्द निवारण कोच</p>
+                </div>
+            </div>
+
+            <!-- Streak & Reset Controls -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <div class="flex items-center gap-1.5 bg-slate-900 px-3 py-1.5 rounded-xl border border-slate-800 text-xs sm:text-sm font-semibold text-amber-400" title="आपकी लगातार अभ्यास स्ट्रीक">
+                    <i data-lucide="zap" class="w-4 h-4 fill-amber-400"></i>
+                    <span id="streak-counter">1 दिन स्ट्रीक</span>
+                </div>
+                <button onclick="resetAllProgress()" class="text-xs sm:text-sm bg-slate-800/90 hover:bg-slate-700 text-slate-200 px-3 py-2 rounded-xl transition flex items-center gap-1.5 border border-slate-700 active:scale-95">
+                    <i data-lucide="rotate-ccw" class="w-4 h-4 text-emerald-400"></i>
+                    <span class="hidden sm:inline">नया दिन शुरू करें</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero & 8 Category Selector Grid -->
+    <section class="pt-6 sm:pt-10 pb-6 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-7">
+            <span class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 text-xs sm:text-sm font-semibold mb-3">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                संपूर्ण स्वास्थ्य समाधान • 8 विशेष प्रोग्राम
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-snug">
+                अपना लक्ष्य या शारीरिक समस्या चुनें और <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300">स्टेप-बाय-स्टेप</span> ठीक करें
+            </h2>
+            <p class="text-slate-400 text-xs sm:text-base mt-2">
+                तेज़ रनिंग, बॉडी बिल्डिंग, सिक्स पैक एब्स, वेट लॉस, योगा-मेडिटेशन से लेकर हिप, कमर, गर्दन और घुटने के दर्द तक हर समस्या के लिए अलग वैज्ञानिक गाइड।
+            </p>
+        </div>
+
+        <!-- 8 Interactive Category Cards -->
+        <div id="category-cards" class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+            <!-- Dynamically populated by JS -->
+        </div>
+    </section>
+
+    <!-- Main Content Workspace -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Active Category Overview & Level Selector -->
+        <div class="rounded-2xl p-5 sm:p-7 border border-slate-800 bg-gradient-to-br from-slate-900 via-cardbg to-slate-900 shadow-2xl mb-6">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                
+                <!-- Left: Icon + Title + Description -->
+                <div class="flex items-start gap-4">
+                    <div id="active-icon-box" class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg bg-gradient-to-br from-emerald-500 to-teal-600">
+                        <i data-lucide="footprints" class="w-8 h-8"></i>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                            <h3 id="active-title" class="text-xl sm:text-3xl font-extrabold text-white">रनिंग (तेज़ दौड़)</h3>
+                            <span id="active-badge" class="text-xs px-2.5 py-0.5 rounded-full font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                                स्पीड और स्टैमिना
+                            </span>
+                        </div>
+                        <p id="active-desc" class="text-slate-300 text-xs sm:text-base max-w-2xl leading-relaxed">
+                            दौड़ने की गति बढ़ाने और सांस फूलने की समस्या को खत्म करने का स्टेप-बाय-स्टेप प्लान।
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Level Toggle -->
+                <div class="flex flex-col sm:items-end gap-2 shrink-0">
+                    <div class="flex items-center gap-1.5 text-xs text-slate-400 font-semibold">
+                        <i data-lucide="sliders-horizontal" class="w-3.5 h-3.5 text-emerald-400"></i>
+                        <span>अपना स्तर (Level) चुनें:</span>
+                    </div>
+                    <div class="grid grid-cols-3 p-1 rounded-xl bg-slate-950 border border-slate-800 w-full sm:w-auto">
+                        <button onclick="setLevel('beginner')" id="btn-beginner" class="level-btn px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all">
+                            🌱 शुरुआती
+                        </button>
+                        <button onclick="setLevel('intermediate')" id="btn-intermediate" class="level-btn px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all">
+                            🔥 मध्यम
+                        </button>
+                        <button onclick="setLevel('advanced')" id="btn-advanced" class="level-btn px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold transition-all">
+                            ⚡ एडवांस
+                        </button>
+                    </div>
+                    <p id="level-intensity-tip" class="text-[11px] sm:text-xs text-amber-300/90 font-medium">
+                        💡 शुरुआती स्तर: सही फॉर्म और धीमी शुरुआत पर ध्यान दें।
+                    </p>
+                </div>
+            </div>
+
+            <!-- Visual Progress Bar -->
+            <div class="mt-6 pt-5 border-t border-slate-800/80">
+                <div class="flex justify-between items-center text-xs sm:text-sm mb-2">
+                    <span class="text-slate-300 font-semibold flex items-center gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+                        इस प्रोग्राम की आज की प्रगति
+                    </span>
+                    <span id="progress-text" class="font-bold text-emerald-400">0% पूरा हुआ (0/6 स्टेप्स)</span>
+                </div>
+                <div class="w-full h-3 bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                    <div id="progress-bar" class="h-full rounded-full bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 transition-all duration-500" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two Column Workspace: Left (8 cols) = Step-by-Step Routine, Right (4 cols) = Smart Tools Sidebar -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            
+            <!-- Left Column: Chronological Steps -->
+            <div class="lg:col-span-8 space-y-6" id="steps-container">
+                <!-- Steps injected dynamically -->
+            </div>
+
+            <!-- Right Column: Smart Tools Sidebar -->
+            <aside class="lg:col-span-4 space-y-6">
+                
+                <!-- Tool 1: Workout & Rest Timer -->
+                <div class="rounded-2xl bg-cardbg border border-slate-800 p-5 shadow-xl">
+                    <div class="flex items-center justify-between mb-3">
+                        <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+                            <i data-lucide="timer" class="w-5 h-5 text-emerald-400"></i>
+                            वर्कआउट टाइमर
+                        </h4>
+                        <span id="timer-status-badge" class="text-[11px] px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-300 font-semibold">
+                            तैयार है
+                        </span>
+                    </div>
+
+                    <div class="bg-slate-950 rounded-2xl p-5 text-center border border-slate-800 mb-4">
+                        <div id="timer-display" class="text-5xl font-mono font-extrabold text-white tracking-wider">
+                            00:30
+                        </div>
+                        <p id="timer-label" class="text-xs text-slate-400 mt-1.5 truncate">
+                            किसी भी स्टेप पर क्लिक करें या समय चुनें
+                        </p>
+                    </div>
+
+                    <!-- Quick Presets: 30s, 60s, 2m, 5m -->
+                    <div class="grid grid-cols-4 gap-2 mb-3">
+                        <button onclick="setTimerPreset(30, '30 सेकंड सेट / होल्ड')" class="py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 transition">
+                            30s
+                        </button>
+                        <button onclick="setTimerPreset(60, '60 सेकंड प्लैंक / रेस्ट')" class="py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 transition">
+                            60s
+                        </button>
+                        <button onclick="setTimerPreset(120, '2 मिनट राउंड / आसन')" class="py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 transition">
+                            2m
+                        </button>
+                        <button onclick="setTimerPreset(300, '5 मिनट कार्डियो / ध्यान')" class="py-2 rounded-xl bg-slate-800/80 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700 transition">
+                            5m
+                        </button>
+                    </div>
+
+                    <!-- Start / Pause / Reset -->
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="toggleTimer()" id="btn-timer-toggle" class="col-span-2 py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20">
+                            <i data-lucide="play" class="w-4 h-4 fill-slate-950"></i> शुरू करें
+                        </button>
+                        <button onclick="resetTimer()" class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-sm transition flex items-center justify-center gap-1 border border-slate-700">
+                            <i data-lucide="rotate-ccw" class="w-4 h-4"></i> रीसेट
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tool 2: Category-Specific Daily Diet & Recovery Tip -->
+                <div class="rounded-2xl bg-cardbg border border-slate-800 p-5 shadow-xl">
+                    <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2 mb-3">
+                        <i data-lucide="salad" class="w-5 h-5 text-amber-400"></i>
+                        डेली डाइट और रिकवरी टिप्स
+                    </h4>
+                    <div id="diet-tips-container" class="space-y-2.5">
+                        <!-- Dynamically updated based on selected category -->
+                    </div>
+                </div>
+
+                <!-- Tool 3: BMI & Calorie Calculator -->
+                <div class="rounded-2xl bg-cardbg border border-slate-800 p-5 shadow-xl">
+                    <h4 class="text-base sm:text-lg font-bold text-white flex items-center gap-2 mb-3">
+                        <i data-lucide="calculator" class="w-5 h-5 text-cyan-400"></i>
+                        BMI और कैलोरी कैलकुलेटर
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="grid grid-cols-2 gap-2.5">
+                            <div>
+                                <label class="block text-xs text-slate-400 mb-1">लंबाई (cm में)</label>
+                                <input type="number" id="bmi-height" placeholder="जैसे: 170" value="170" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-emerald-400">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-slate-400 mb-1">वजन (kg में)</label>
+                                <input type="number" id="bmi-weight" placeholder="जैसे: 68" value="68" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-emerald-400">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-slate-400 mb-1">आपका मुख्य लक्ष्य</label>
+                            <select id="bmi-goal" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-emerald-400">
+                                <option value="maintain">स्वस्थ वजन बनाए रखना / दर्द निवारण</option>
+                                <option value="loss">वजन घटाना (Weight Loss)</option>
+                                <option value="gain">मसल और वजन बढ़ाना (Muscle Gain)</option>
+                            </select>
+                        </div>
+                        <button onclick="calculateBMI()" class="w-full py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20">
+                            गणना करें (Calculate)
+                        </button>
+
+                        <!-- Result Card -->
+                        <div id="bmi-result-box" class="bg-slate-950 border border-slate-800 rounded-xl p-3.5 text-xs space-y-2">
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-400">आपका BMI स्कोर:</span>
+                                <span id="bmi-score" class="font-extrabold text-sm text-emerald-400">23.5 (सामान्य वजन)</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-400">दैनिक कैलोरी लक्ष्य:</span>
+                                <span id="calorie-target" class="font-bold text-amber-300">2,150 kcal / दिन</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-slate-400">दैनिक पानी की मात्रा:</span>
+                                <span id="water-target" class="font-bold text-cyan-300">2.8 लीटर / दिन</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- Non-blocking Toast Banner -->
+    <div id="toast-box" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 max-w-sm bg-slate-900 border border-emerald-500/50 text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+            <i data-lucide="check-circle" class="w-5 h-5"></i>
+        </div>
+        <p id="toast-msg" class="text-xs sm:text-sm font-semibold">अपडेट हो गया!</p>
+    </div>
+
+    <script>
+        // ================= 8 COMPREHENSIVE HINDI CATEGORIES DATA =================
+        const categoriesData = {
+            running: {
+                id: 'running',
+                shortTitle: 'रनिंग (तेज़ दौड़)',
+                title: 'रनिंग (तेज़ दौड़ / Speed & Stamina)',
+                badge: 'स्पीड और स्टैमिना',
+                lucideIcon: 'footprints',
+                gradient: 'from-emerald-500 to-teal-600',
+                description: 'दौड़ने की गति (Speed) बढ़ाने, सांस फूलने की समस्या खत्म करने और 1600m या लंबी रेस जीतने के लिए वैज्ञानिक स्टेप-बाय-स्टेप प्लान।',
+                dietTips: [
+                    'दौड़ने से 30 मिनट पहले 1 केला या 4-5 भीगे हुए बादाम खाएं।',
+                    'दौड़ते समय नाक से गहरी सांस लें और मुंह से धीरे छोड़ें।',
+                    'रनिंग के बाद इलेक्ट्रोलाइट्स, नींबू पानी या नारियल पानी जरूर पिएं।'
+                ],
+                phases: [
+                    {
+                        phaseTitle: 'चरण 1: वार्म-अप और जॉइंट मोबिलिटी (Warm-up)',
+                        phaseDesc: 'मांसपेशियों को गर्म करें ताकि दौड़ते समय खिंचाव न आए',
+                        steps: [
+                            {
+                                id: 'run-1',
+                                name: 'डायनामिक लेग स्विंग्स और एंकल रोटेशन',
+                                detail: 'दोनों पैरों को आगे-पीछे झुलाएं और टखनों को गोल घुमाएं।',
+                                target: 'टखने, घुटने और हिप जॉइंट्स',
+                                duration: { beginner: '3 मिनट', intermediate: '4 मिनट', advanced: '5 मिनट' },
+                                timerSec: 120
+                            },
+                            {
+                                id: 'run-2',
+                                name: 'हाई नीज़ (High Knees) और बट किक्स',
+                                detail: 'एक ही जगह पर घुटनों को छाती तक ऊपर उठाते हुए तेज़ कदम चलाएं।',
+                                target: 'कार्डियो और जांघ की मांसपेशियां',
+                                duration: { beginner: '2 सेट × 30 सेकंड', intermediate: '3 सेट × 45 सेकंड', advanced: '4 सेट × 60 सेकंड' },
+                                timerSec: 30
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 2: मुख्य स्पीड और स्टैमिना अभ्यास (Main Speed)',
+                        phaseDesc: 'रनिंग स्पीड और फेफड़ों की क्षमता बढ़ाने वाले अभ्यास',
+                        steps: [
+                            {
+                                id: 'run-3',
+                                name: 'स्प्रिंट इंटरवल (100m तेज़ दौड़)',
+                                detail: 'अपनी 85-90% ताकत से तेज़ दौड़ें, फिर 1 मिनट पैदल चलकर सांस सामान्य करें।',
+                                target: 'एक्सप्लोसिव स्पीड और काफ मसल्स',
+                                duration: { beginner: '4 स्प्रिंट (100m)', intermediate: '6 स्प्रिंट (100m)', advanced: '10 स्प्रिंट (100m)' },
+                                timerSec: 30
+                            },
+                            {
+                                id: 'run-4',
+                                name: 'टेम्पो रन (लगातार मध्यम-तेज़ गति)',
+                                detail: 'बिना रुके एक समान तेज़ गति बनाए रखें और हाथों को 90° पर चलाएं।',
+                                target: 'स्टैमिना और हृदय क्षमता',
+                                duration: { beginner: '10 मिनट लगातार', intermediate: '18 मिनट लगातार', advanced: '25 मिनट लगातार' },
+                                timerSec: 300
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 3: कूल-डाउन और लेग स्ट्रेचिंग (Cool Down)',
+                        phaseDesc: 'पैरों की जकड़न और दर्द से बचने के लिए जरूरी चरण',
+                        steps: [
+                            {
+                                id: 'run-5',
+                                name: 'स्लो वॉक और हैमस्ट्रिंग स्ट्रेच',
+                                detail: 'दौड़ के तुरंत बाद बैठें नहीं; 3 मिनट टहलें और फिर पैर सीधे रखकर पंजों को छुएं।',
+                                target: 'हैमस्ट्रिंग और पिंडलियां (Calves)',
+                                duration: { beginner: '4 मिनट', intermediate: '5 मिनट', advanced: '6 मिनट' },
+                                timerSec: 120
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            bodybuilding: {
+                id: 'bodybuilding',
+                shortTitle: 'बॉडी बिल्डिंग',
+                title: 'बॉडी बिल्डिंग (मांसपेशियां / Muscle Gain)',
+                badge: 'ताकत और मसल गेन',
+                lucideIcon: 'dumbbell',
+                gradient: 'from-amber-500 to-orange-600',
+                description: 'चेस्ट, बाइसेप्स, कंधे और पीठ को चौड़ा व मस्कुलर बनाने के लिए प्रोग्रेसिव ओवरलोड और सही फॉर्म पर आधारित प्लान।',
+                dietTips: [
+                    'प्रतिदिन शरीर के वजन (kg) के 1.6 से 2 गुना ग्राम प्रोटीन लें (पनीर, सोया, दालें, अंडे, चिकन)।',
+                    'वर्कआउट के 45 मिनट के अंदर प्रोटीन + कार्बोहाइड्रेट युक्त भोजन लें।',
+                    'मसल ग्रोथ के लिए रोजाना 7-8 घंटे की गहरी नींद अनिवार्य है।'
+                ],
+                phases: [
+                    {
+                        phaseTitle: 'चरण 1: अपर बॉडी वार्म-अप (Joint & Muscle Prep)',
+                        phaseDesc: 'भारी अभ्यास से पहले कंधों और कोहनियों को सुरक्षित करें',
+                        steps: [
+                            {
+                                id: 'body-1',
+                                name: 'आर्म सर्कल्स और शोल्डर रोटेशन',
+                                detail: 'दोनों हाथों को आगे और पीछे गोल घुमाएं, फिर हल्के वॉल पुश-अप्स करें।',
+                                target: 'रोटेटर कफ और कंधे',
+                                duration: { beginner: '3 मिनट', intermediate: '4 मिनट', advanced: '5 मिनट' },
+                                timerSec: 60
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 2: मुख्य मसल बिल्डिंग वर्कआउट (Hypertrophy)',
+                        phaseDesc: 'हर रैप को नियंत्रण में और पूरे रेंज ऑफ मोशन के साथ करें',
+                        steps: [
+                            {
+                                id: 'body-2',
+                                name: 'चेस्ट और ट्राइसेप्स: पुश-अप्स / बेंच प्रेस',
+                                detail: 'नीचे जाते समय सांस लें और ऊपर धकेलते समय सांस छोड़ें।',
+                                target: 'चेस्ट (Pectorals) और ट्राइसेप्स',
+                                duration: { beginner: '3 सेट × 10 रैप्स', intermediate: '4 सेट × 15 रैप्स', advanced: '4 सेट × 25 रैप्स' },
+                                timerSec: 60
+                            },
+                            {
+                                id: 'body-3',
+                                name: 'बैक और बाइसेप्स: पुल-अप्स / डंबल कर्ल्स',
+                                detail: 'कमर सीधी रखें और बाइसेप्स को निचोड़ते हुए वजन ऊपर उठाएं।',
+                                target: 'लैट्स (पीठ) और बाइसेप्स',
+                                duration: { beginner: '3 सेट × 8 रैप्स', intermediate: '4 सेट × 12 रैप्स', advanced: '4 सेट × 18 रैप्स' },
+                                timerSec: 60
+                            },
+                            {
+                                id: 'body-4',
+                                name: 'लेग्स और शोल्डर: स्क्वाट्स और पाइक पुश-अप्स',
+                                detail: 'मजबूत शरीर और टेस्टोस्टेरोन बूस्ट करने के लिए स्क्वाट्स अनिवार्य हैं।',
+                                target: 'क्वाड्रिसेप्स, ग्लूट्स और डेल्टॉइड्स',
+                                duration: { beginner: '3 सेट × 12 रैप्स', intermediate: '4 सेट × 18 रैप्स', advanced: '4 सेट × 25 रैप्स' },
+                                timerSec: 60
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 3: मसल स्ट्रेचिंग और कूल-डाउन',
+                        phaseDesc: 'मांसपेशियों में लचीलापन और रिकवरी तेज़ करने के लिए',
+                        steps: [
+                            {
+                                id: 'body-5',
+                                name: 'चेस्ट ओपनर और ट्राइसेप्स स्ट्रेच',
+                                detail: 'दीवार के सहारे हाथ रखकर छाती और बाजुओं की मांसपेशियों को खींचें।',
+                                target: 'अपर बॉडी रिकवरी',
+                                duration: { beginner: '2 मिनट', intermediate: '3 मिनट', advanced: '4 मिनट' },
+                                timerSec: 60
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            sixpack: {
+                id: 'sixpack',
+                shortTitle: 'सिक्स पैक एब्स',
+                title: 'सिक्स पैक एब्स (कोर स्ट्रेंथ / Six-Pack Abs)',
+                badge: 'कोर और एब्स',
+                lucideIcon: 'shield',
+                gradient: 'from-rose-500 to-pink-600',
+                description: 'अपर, लोअर और साइड एब्स (Obliques) को तराशने और पेट की अतिरिक्त चर्बी कम करने के लिए हाई-इंटेंसिटी कोर रूटीन।',
+                dietTips: [
+                    'चीनी (Sugar), मैदा और तला-भुना भोजन बंद करें—एब्स 70% डाइट से बनते हैं!',
+                    'रात का खाना सोने से कम से कम 2.5 घंटे पहले हल्का लें।',
+                    'भोजन में फाइबर (सलाद, ओट्स) और लीन प्रोटीन की मात्रा बढ़ाएं।'
+                ],
+                phases: [
+                    {
+                        phaseTitle: 'चरण 1: कोर एक्टिवेशन वार्म-अप',
+                        phaseDesc: 'मेटाबॉलिज्म जगाने और पेट की मांसपेशियों में रक्त प्रवाह बढ़ाने के लिए',
+                        steps: [
+                            {
+                                id: 'abs-1',
+                                name: 'माउंटेन क्लाइम्बर्स (Mountain Climbers)',
+                                detail: 'प्लैंक पोजीशन में रहकर घुटनों को तेज़ी से छाती की ओर लाएं।',
+                                target: 'संपूर्ण कोर और कैलोरी बर्न',
+                                duration: { beginner: '3 सेट × 25 सेकंड', intermediate: '3 सेट × 40 सेकंड', advanced: '4 सेट × 50 सेकंड' },
+                                timerSec: 30
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 2: अपर, लोअर और साइड एब्स टारगेट',
+                        phaseDesc: 'पेट के हर हिस्से पर सटीक दबाव डालने वाले अभ्यास',
+                        steps: [
+                            {
+                                id: 'abs-2',
+                                name: 'अपर एब्स: क्रंचेस (Crunches)',
+                                detail: 'गर्दन न खींचें; केवल पेट को सिकोड़ते हुए कंधे ऊपर उठाएं।',
+                                target: 'अपर रेक्टस एब्डोमिनिस',
+                                duration: { beginner: '3 सेट × 12 रैप्स', intermediate: '3 सेट × 20 रैप्स', advanced: '4 सेट × 30 रैप्स' },
+                                timerSec: 60
+                            },
+                            {
+                                id: 'abs-3',
+                                name: 'लोअर एब्स: लेग रेज़ (Leg Raises)',
+                                detail: 'पीठ के बल लेटकर दोनों पैरों को सीधा 90° तक उठाएं और धीरे नीचे लाएं।',
+                                target: 'लोअर एब्स (निचला पेट)',
+                                duration: { beginner: '3 सेट × 10 रैप्स', intermediate: '3 सेट × 15 रैप्स', advanced: '4 सेट × 22 रैप्स' },
+                                timerSec: 60
+                            },
+                            {
+                                id: 'abs-4',
+                                name: 'ऑब्लिक्स (V-Cut): रशियन ट्विस्ट और बाइसिकल क्रंच',
+                                detail: 'कमर के दोनों किनारों को आकार देने के लिए शरीर को दाएं-बाएं घुमाएं।',
+                                target: 'साइड एब्स (Obliques)',
+                                duration: { beginner: '3 सेट × 16 रैप्स', intermediate: '3 सेट × 24 रैप्स', advanced: '4 सेट × 36 रैप्स' },
+                                timerSec: 60
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 3: डीप कोर होल्ड और कोबरा स्ट्रेच',
+                        phaseDesc: 'कोर को अंदर से मजबूत करने और पेट की जकड़न खोलने के लिए',
+                        steps: [
+                            {
+                                id: 'abs-5',
+                                name: 'एल्बो प्लैंक होल्ड + कोबरा स्ट्रेच',
+                                detail: 'शरीर को सीधी रेखा में रखकर प्लैंक करें, फिर पेट के बल लेटकर छाती ऊपर उठाएं।',
+                                target: 'ट्रांसवर्स एब्डोमिनिस (Deep Core)',
+                                duration: { beginner: '30 सेकंड प्लैंक', intermediate: '60 सेकंड प्लैंक', advanced: '90 सेकंड प्लैंक' },
+                                timerSec: 60
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            meditation: {
+                id: 'meditation',
+                shortTitle: 'फिटनेस और मेडिटेशन',
+                title: 'फिटनेस और मेडिटेशन (मानसिक शांति / Mindfulness)',
+                badge: 'तनाव मुक्ति और ऊर्जा',
+                lucideIcon: 'brain',
+                gradient: 'from-cyan-500 to-blue-600',
+                description: 'तनाव (Stress) और चिंता कम करने, एकाग्रता बढ़ाने और दिनभर ऊर्जावान बने रहने के लिए हल्का कार्डियो और ध्यान अभ्यास।',
+                dietTips: [
+                    'ध्यान से पहले भारी भोजन न करें; सात्विक और हल्का आहार लें।',
+                    'अखरोट, अलसी के बीज और हरी पत्तेदार सब्जियां मस्तिष्क को शांत व तेज़ रखती हैं।',
+                    'सोने से 30 मिनट पहले मोबाइल स्क्रीन से दूरी बनाएं।'
+                ],
+                phases: [
+                    {
+                        phaseTitle: 'चरण 1: हल्की कार्डियो फिटनेस (Light Flow)',
+                        phaseDesc: 'शरीर से आलस्य भगाने और एंडोर्फिन हार्मोन बढ़ाने के लिए',
+                        steps: [
+                            {
+                                id: 'med-1',
+                                name: 'ब्रिस्क वॉक या स्पॉट जॉगिंग',
+                                detail: 'सामान्य से थोड़ी तेज़ गति से चलें ताकि पूरे शरीर में ऑक्सीजन का संचार हो।',
+                                target: 'हृदय स्वास्थ्य और मूड बूस्ट',
+                                duration: { beginner: '5 मिनट', intermediate: '10 मिनट', advanced: '15 मिनट' },
+                                timerSec: 300
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 2: प्राणायाम और सांस नियंत्रण (Breathwork)',
+                        phaseDesc: 'तंत्रिका तंत्र (Nervous System) को शांत करने के लिए',
+                        steps: [
+                            {
+                                id: 'med-2',
+                                name: 'अनुलोम-विलोम प्राणायाम',
+                                detail: 'दाएं नाक को बंद कर बाएं से सांस लें, फिर बाएं को बंद कर दाएं से छोड़ें।',
+                                target: 'मस्तिष्क संतुलन और फेफड़े',
+                                duration: { beginner: '3 मिनट', intermediate: '5 मिनट', advanced: '10 मिनट' },
+                                timerSec: 180
+                            },
+                            {
+                                id: 'med-3',
+                                name: 'भ्रामरी प्राणायाम (हनी-बी ब्रीदिंग)',
+                                detail: 'आंखें बंद कर कानों को अंगूठे से हल्का बंद करें और भंवरे जैसा गुंजन करें।',
+                                target: 'तनाव, गुस्सा और अनिद्रा से राहत',
+                                duration: { beginner: '5 बार', intermediate: '9 बार', advanced: '15 बार' },
+                                timerSec: 60
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 3: माइंडफुल मेडिटेशन (ध्यान)',
+                        phaseDesc: 'आंतरिक शांति और गहरी एकाग्रता का अनुभव करें',
+                        steps: [
+                            {
+                                id: 'med-4',
+                                name: 'सांसों पर ध्यान (Mindful Breathing)',
+                                detail: 'कमर सीधी रखकर बैठें। विचारों से लड़ें नहीं, केवल आती-जाती सांसों को देखें।',
+                                target: 'एकाग्रता और मानसिक स्पष्टता',
+                                duration: { beginner: '5 मिनट', intermediate: '10 मिनट', advanced: '20 मिनट' },
+                                timerSec: 300
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            yoga: {
+                id: 'yoga',
+                shortTitle: 'योगा (आसन)',
+                title: 'योगा (लचीलापन और संतुलन / Yoga & Asanas)',
+                badge: 'योग और लचीलापन',
+                lucideIcon: 'flower-2',
+                gradient: 'from-violet-500 to-purple-600',
+                description: 'रीढ़ की हड्डी को लचीला बनाने, पाचन सुधारने और रोग प्रतिरोधक क्षमता बढ़ाने के लिए पारंपरिक योगासन।',
+                dietTips: [
+                    'योगाभ्यास हमेशा खाली पेट (सुबह शौच के बाद) या भोजन के 3-4 घंटे बाद करें।',
+                    'योग के तुरंत बाद ठंडा पानी न पिएं; 15 मिनट बाद सामान्य पानी लें।',
+                    'आहार में अंकुरित अनाज, मौसमी फल और ताजा भोजन शामिल करें।'
+                ],
+                phases: [
+                    {
+                        phaseTitle: 'चरण 1: वार्म-अप और सूर्य नमस्कार',
+                        phaseDesc: 'पूरे शरीर के 12 प्रमुख अंगों और जोड़ों को सक्रिय करने के लिए',
+                        steps: [
+                            {
+                                id: 'yoga-1',
+                                name: 'ताड़ासन और सूर्य नमस्कार (Sun Salutation)',
+                                detail: 'ताड़ासन से शरीर को ऊपर खींचें, फिर 12 आसनों वाले सूर्य नमस्कार के चक्र करें।',
+                                target: 'संपूर्ण शरीर, रीढ़ और पाचन तंत्र',
+                                duration: { beginner: '3 चक्र', intermediate: '6 चक्र', advanced: '12 चक्र' },
+                                timerSec: 180
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 2: मुख्य योगासन (Core & Balance Asanas)',
+                        phaseDesc: 'शरीर में लचीलापन और संतुलन स्थापित करने वाले प्रमुख आसन',
+                        steps: [
+                            {
+                                id: 'yoga-2',
+                                name: 'भुजंगासन (Cobra Pose)',
+                                detail: 'पेट के बल लेटकर हथेलियों के सहारे छाती को ऊपर उठाएं। कमर व फेफड़ों के लिए श्रेष्ठ।',
+                                target: 'रीढ़ की हड्डी और छाती',
+                                duration: { beginner: '3 बार × 20 सेकंड', intermediate: '3 बार × 30 सेकंड', advanced: '4 बार × 45 सेकंड' },
+                                timerSec: 30
+                            },
+                            {
+                                id: 'yoga-3',
+                                name: 'वृक्षासन (Tree Pose)',
+                                detail: 'एक पैर पर खड़े होकर संतुलन बनाएं और हाथों को नमस्कार मुद्रा में ऊपर रखें।',
+                                target: 'संतुलन, एकाग्रता और पैर',
+                                duration: { beginner: '30 सेकंड (दोनों पैर)', intermediate: '45 सेकंड (दोनों पैर)', advanced: '60 सेकंड (दोनों पैर)' },
+                                timerSec: 60
+                            },
+                            {
+                                id: 'yoga-4',
+                                name: 'पश्चिमोत्तानासन (Seated Forward Bend)',
+                                detail: 'पैर सामने फैलाकर बैठें और सांस छोड़ते हुए आगे झुककर पंजों को पकड़ें।',
+                                target: 'हैमस्ट्रिंग, पेट और कमर',
+                                duration: { beginner: '2 बार × 20 सेकंड', intermediate: '2 बार × 35 सेकंड', advanced: '3 बार × 45 सेकंड' },
+                                timerSec: 30
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 3: विश्राम (Relaxation)',
+                        phaseDesc: 'योगाभ्यास की ऊर्जा को शरीर में समाहित करने के लिए',
+                        steps: [
+                            {
+                                id: 'yoga-5',
+                                name: 'शवासन (Corpse Pose)',
+                                detail: 'पीठ के बल सीधे लेट जाएं, हाथ-पैर ढीले छोड़ दें और शरीर को पूरी तरह शांत करें।',
+                                target: 'संपूर्ण विश्राम और रिकवरी',
+                                duration: { beginner: '3 मिनट', intermediate: '5 मिनट', advanced: '7 मिनट' },
+                                timerSec: 180
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            weightloss: {
+                id: 'weightloss',
+                shortTitle: 'वेट लॉस (वजन घटाना)',
+                title: 'वेट लॉस (तेज़ी से वजन और चर्बी घटाना / Fat Loss & HIIT)',
+                badge: 'फैट बर्न और HIIT',
+                lucideIcon: 'trending-down',
+                gradient: 'from-orange-500 to-red-600',
+                description: 'पूरे शरीर की अतिरिक्त चर्बी (Full Body Fat) कम करने और मेटाबॉलिज्म को 24 घंटे सक्रिय रखने के लिए वैज्ञानिक HIIT प्लान।',
+                dietTips: [
+                    'कैलोरी डेफिसिट (Calorie Deficit) में रहें—अपनी रोज की जरूरत से 300-400 कैलोरी कम खाएं।',
+                    'सुबह खाली पेट गुनगुने पानी में नींबू या जीरा/दालचीनी का पानी पिएं।',
+                    'बिस्किट, नमकीन, जंक फूड और मीठी चाय की जगह ग्रीन टी और भुने चने लें।'
+                ],
+                phases: [
+                    {
+                        phaseTitle: 'चरण 1: मेटाबॉलिज्म बूस्ट वार्म-अप',
+                        phaseDesc: 'दिल की धड़कन बढ़ाकर फैट बर्निंग जोन में प्रवेश करें',
+                        steps: [
+                            {
+                                id: 'wl-1',
+                                name: 'जंपिंग जैक्स और हाई-नी मार्च',
+                                detail: 'बिना रुके तेज़ लय में हाथ-पैर चलाते हुए जंपिंग जैक्स करें।',
+                                target: 'फुल बॉडी वार्म-अप',
+                                duration: { beginner: '2 सेट × 30 सेकंड', intermediate: '3 सेट × 45 सेकंड', advanced: '4 सेट × 60 सेकंड' },
+                                timerSec: 30
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 2: मुख्य HIIT फैट बर्न सर्किट (High Intensity)',
+                        phaseDesc: 'कम समय में सबसे ज्यादा कैलोरी जलाने वाले व्यायाम',
+                        steps: [
+                            {
+                                id: 'wl-2',
+                                name: 'बर्पीज़ (Burpees / स्टेप-बैक बर्पीज़)',
+                                detail: 'स्क्वाट करें, हाथ जमीन पर रखकर पैर पीछे ले जाएं, वापस आएं और ऊपर कूदें।',
+                                target: 'पूरे शरीर की चर्बी (हाई कैलोरी बर्न)',
+                                duration: { beginner: '3 सेट × 8 रैप्स', intermediate: '4 सेट × 12 रैप्स', advanced: '4 सेट × 18 रैप्स' },
+                                timerSec: 60
+                            },
+                            {
+                                id: 'wl-3',
+                                name: 'स्क्वाट जंप्स / तेज़ बॉडीवेट स्क्वाट्स',
+                                detail: 'जांघों और हिप्स की चर्बी कम करने के लिए तेज़ गति से स्क्वाट्स करें।',
+                                target: 'लोअर बॉडी और कोर',
+                                duration: { beginner: '3 सेट × 12 रैप्स', intermediate: '4 सेट × 18 रैप्स', advanced: '4 सेट × 25 रैप्स' },
+                                timerSec: 60
+                            },
+                            {
+                                id: 'wl-4',
+                                name: 'स्किपिंग (रस्सी कूदना) या फास्ट शैडो बॉक्सिंग',
+                                detail: 'लगातार 1-2 मिनट तेज़ गति से करें और 30 सेकंड आराम लें।',
+                                target: 'स्टैमिना और फैट लॉस',
+                                duration: { beginner: '3 राउंड × 1 मिनट', intermediate: '4 राउंड × 2 मिनट', advanced: '5 राउंड × 2 मिनट' },
+                                timerSec: 120
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 3: कूल-डाउन और डीप ब्रीदिंग',
+                        phaseDesc: 'हृदय गति को सामान्य लाने के लिए',
+                        steps: [
+                            {
+                                id: 'wl-5',
+                                name: 'स्लो वॉक और फुल बॉडी स्ट्रेच',
+                                detail: 'गहरी सांस लेते हुए टहलें और हाथों-पैरों को ढीला छोड़कर स्ट्रेच करें।',
+                                target: 'रिकवरी और लैक्टिक एसिड रिमूवल',
+                                duration: { beginner: '3 मिनट', intermediate: '4 मिनट', advanced: '5 मिनट' },
+                                timerSec: 180
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            hipback: {
+                id: 'hipback',
+                shortTitle: 'हिप और कमर दर्द',
+                title: 'हिप और कमर दर्द निवारण (Hip, Sciatica & Lower Back Relief)',
+                badge: 'हिप मोबिलिटी और दर्द राहत',
+                lucideIcon: 'activity',
+                gradient: 'from-teal-500 to-emerald-600',
+                description: 'लंबे समय तक बैठने से होने वाली हिप टाइटनेस, कमर दर्द (Lower Back Pain) और साइटिका नस के खिंचाव को ठीक करने वाला सुरक्षित प्लान।',
+                dietTips: [
+                    'सूजन कम करने वाले आहार (Anti-inflammatory): हल्दी वाला दूध, अदरक, लहसुन और अखरोट लें।',
+                    'हड्डियों और जोड़ों की मजबूती के लिए कैल्शियम और विटामिन-D (सुबह की धूप) जरूर लें।',
+                    'लगातार 45 मिनट से ज्यादा एक ही कुर्सी पर न बैठें; हर घंटे 2 मिनट टहलें।'
+                ],
+                phases: [
+                    {
+                        phaseTitle: 'चरण 1: जेंटल स्पाइन और पेल्विक वार्म-अप',
+                        phaseDesc: 'रीढ़ और हिप जोड़ों की जकड़न को बिना झटके खोलने के लिए',
+                        steps: [
+                            {
+                                id: 'hip-1',
+                                name: 'कैट-काउ स्ट्रेच (मार्जरी आसन)',
+                                detail: 'घुटनों और हथेलियों के बल आएं। सांस लेते हुए कमर नीचे झुकाएं और छोड़ते हुए पीठ ऊपर गोल करें।',
+                                target: 'रीढ़ की हड्डी और लोअर बैक',
+                                duration: { beginner: '8 बार धीमी गति से', intermediate: '12 बार', advanced: '15 बार' },
+                                timerSec: 60
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 2: हिप मोबिलिटी और साइटिका रिलीफ अभ्यास',
+                        phaseDesc: 'हिप फ्लेक्सर्स और ग्लूट्स की नसों को खोलने वाले मुख्य अभ्यास',
+                        steps: [
+                            {
+                                id: 'hip-2',
+                                name: 'पिजन पोज़ / फिगर-4 हिप स्ट्रेच (Figure-4 Stretch)',
+                                detail: 'पीठ के बल लेटकर एक पैर का टखना दूसरे घुटने पर रखें और जांघ को छाती की ओर खींचें। साइटिका के लिए रामबाण।',
+                                target: 'हिप जॉइंट्स और पिरिफॉर्मिस मसल',
+                                duration: { beginner: '20 सेकंड (दोनों पैर)', intermediate: '35 सेकंड (दोनों पैर)', advanced: '50 सेकंड (दोनों पैर)' },
+                                timerSec: 30
+                            },
+                            {
+                                id: 'hip-3',
+                                name: 'ग्लूट ब्रिज (सेतुबंधासन)',
+                                detail: 'पीठ के बल लेटें, घुटने मोड़ें और हिप्स को धीरे-धीरे ऊपर उठाकर 3 सेकंड रोकें। यह कमर को सपोर्ट देता है।',
+                                target: 'ग्लूट्स और लोअर बैक मजबूती',
+                                duration: { beginner: '2 सेट × 10 रैप्स', intermediate: '3 सेट × 15 रैप्स', advanced: '3 सेट × 20 रैप्स' },
+                                timerSec: 60
+                            },
+                            {
+                                id: 'hip-4',
+                                name: 'बटरफ्लाई पोज़ (बद्धकोणासन)',
+                                detail: 'दोनों पैरों के तलवों को आपस में मिलाकर बैठें और घुटनों को तितली के पंखों की तरह ऊपर-नीचे हिलाएं।',
+                                target: 'इनर थाई और हिप ओपनिंग',
+                                duration: { beginner: '1 मिनट', intermediate: '2 मिनट', advanced: '3 मिनट' },
+                                timerSec: 60
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 3: स्पाइन रिलैक्सेशन (Cool Down)',
+                        phaseDesc: 'कमर की मांसपेशियों को पूरा आराम देने के लिए',
+                        steps: [
+                            {
+                                id: 'hip-5',
+                                name: 'बालासन (Child’s Pose)',
+                                detail: 'एड़ियों पर बैठकर आगे झुकें, माथा जमीन पर टिकाएं और हाथों को आगे फैलाकर गहरी सांस लें।',
+                                target: 'पूरी पीठ और हिप्स का तनाव मुक्ति',
+                                duration: { beginner: '1 मिनट', intermediate: '2 मिनट', advanced: '3 मिनट' },
+                                timerSec: 60
+                            }
+                        ]
+                    }
+                ]
+            },
+
+            otherissues: {
+                id: 'otherissues',
+                shortTitle: 'अन्य शारीरिक समस्याएं',
+                title: 'अन्य शारीरिक समस्याएं (गर्दन, घुटना और पोस्चर सुधार)',
+                badge: 'जॉइंट और पोस्चर केयर',
+                lucideIcon: 'heart-pulse',
+                gradient: 'from-indigo-500 to-sky-600',
+                description: 'मोबाइल/लैपटॉप से होने वाला सर्वाइकल (गर्दन व कंधे का दर्द), घुटनों की कमजोरी और झुकी हुई कमर (Bad Posture) सुधारने का विशेष प्लान।',
+                dietTips: [
+                    'जोड़ों के लचीलेपन के लिए ओमेगा-3 (अलसी, अखरोट) और विटामिन-C (आंवला, संतरा) लें।',
+                    'मोबाइल फोन को नीचे गर्दन झुकाकर देखने के बजाय आंखों की ऊंचाई पर लाकर देखें।',
+                    'पर्याप्त पानी पिएं ताकि जोड़ों में चिकनाई (Lubrication) बनी रहे।'
+                ],
+                phases: [
+                    {
+                        phaseTitle: 'चरण 1: सर्वाइकल और कंधों का दर्द निवारण (Neck & Shoulder)',
+                        phaseDesc: 'गर्दन की नसों में जकड़न और सिरदर्द से राहत के लिए',
+                        steps: [
+                            {
+                                id: 'oth-1',
+                                name: 'चिन टक्स (Chin Tucks) और नेक साइड स्ट्रेच',
+                                detail: 'सीधे बैठकर ठुड्डी को हल्का पीछे की ओर दबाएं (डबल चिन बनाएं) और 5 सेकंड रोकें। फिर गर्दन को दाएं-बाएं झुकाएं।',
+                                target: 'सर्वाइकल स्पाइन और गर्दन की नसें',
+                                duration: { beginner: '8 बार', intermediate: '12 बार', advanced: '15 बार' },
+                                timerSec: 60
+                            },
+                            {
+                                id: 'oth-2',
+                                name: 'शोल्डर ब्लेड स्क्वीज़ (Scapular Squeeze)',
+                                detail: 'दोनों कंधों को पीछे की ओर खींचें जैसे पीठ के बीच पेंसिल दबा रहे हों। झुके हुए कंधों (Rounded Shoulders) को ठीक करता है।',
+                                target: 'अपर बैक और पोस्चर सुधार',
+                                duration: { beginner: '2 सेट × 10 बार', intermediate: '3 सेट × 12 बार', advanced: '3 सेट × 15 बार' },
+                                timerSec: 60
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 2: घुटनों की मजबूती (Knee Pain & Strength)',
+                        phaseDesc: 'बिना घुटनों पर दबाव डाले आसपास की मांसपेशियों को मजबूत करें',
+                        steps: [
+                            {
+                                id: 'oth-3',
+                                name: 'सीटेड लेग एक्सटेंशन और क्वाड सेट्स',
+                                detail: 'कुर्सी पर बैठकर एक पैर को सीधा सामने उठाएं, पंजे को अपनी ओर खींचें और 5 सेकंड रोकें।',
+                                target: 'घुटने के जोड़ और जांघ की मांसपेशियां',
+                                duration: { beginner: '2 सेट × 10 (दोनों पैर)', intermediate: '3 सेट × 12 (दोनों पैर)', advanced: '3 सेट × 15 (दोनों पैर)' },
+                                timerSec: 60
+                            },
+                            {
+                                id: 'oth-4',
+                                name: 'काफ रेज़ (एड़ी उठाना / Calf Raises)',
+                                detail: 'दीवार का हल्का सहारा लेकर पंजों के बल ऊपर उठें और धीरे नीचे आएं। पैरों में रक्त संचार बढ़ाता है।',
+                                target: 'पिंडलियां और टखने',
+                                duration: { beginner: '2 सेट × 12 रैप्स', intermediate: '3 सेट × 15 रैप्स', advanced: '3 सेट × 20 रैप्स' },
+                                timerSec: 60
+                            }
+                        ]
+                    },
+                    {
+                        phaseTitle: 'चरण 3: फुल बॉडी पोस्चर एलाइनमेंट (Wall Angel)',
+                        phaseDesc: 'रीढ़ को सीधा और शरीर का संतुलन बेहतर बनाने के लिए',
+                        steps: [
+                            {
+                                id: 'oth-5',
+                                name: 'वॉल एंजेल्स (Wall Angels)',
+                                detail: 'दीवार से पीठ, सिर और हाथ सटाकर खड़े हों और हाथों को दीवार से सटाए रखते हुए ऊपर-नीचे ले जाएं।',
+                                target: 'संपूर्ण स्पाइन और पोस्चर एलाइनमेंट',
+                                duration: { beginner: '2 सेट × 8 बार', intermediate: '3 सेट × 10 बार', advanced: '3 सेट × 15 बार' },
+                                timerSec: 60
+                            }
+                        ]
+                    }
+                ]
+            }
+        };
+
+        // ================= STATE MANAGEMENT =================
+        let activeCategory = 'running';
+        let activeLevel = 'beginner';
+        let completedMap = {};
+        let streakDays = 1;
+
+        // Timer Variables
+        let timerSeconds = 30;
+        let initialTimerSeconds = 30;
+        let timerInterval = null;
+        let isRunning = false;
+
+        // Load from localStorage safely
+        function loadStorage() {
+            try {
+                const savedCompleted = localStorage.getItem('fitbharat_pro_completed');
+                if (savedCompleted) completedMap = JSON.parse(savedCompleted);
+
+                const savedStreak = localStorage.getItem('fitbharat_pro_streak');
+                const lastActiveDate = localStorage.getItem('fitbharat_pro_date');
+                const today = new Date().toDateString();
+
+                if (savedStreak) {
+                    streakDays = parseInt(savedStreak, 10) || 1;
+                    if (lastActiveDate && lastActiveDate !== today) {
+                        streakDays += 1;
+                        localStorage.setItem('fitbharat_pro_streak', streakDays);
+                    }
+                }
+                localStorage.setItem('fitbharat_pro_date', today);
+            } catch (e) {
+                console.warn('LocalStorage unavailable');
+            }
+            document.getElementById('streak-counter').textContent = `${streakDays} दिन स्ट्रीक`;
+        }
+
+        function saveStorage() {
+            try {
+                localStorage.setItem('fitbharat_pro_completed', JSON.stringify(completedMap));
+                localStorage.setItem('fitbharat_pro_streak', streakDays);
+                localStorage.setItem('fitbharat_pro_date', new Date().toDateString());
+            } catch (e) {}
+        }
+
+        // ================= INITIALIZATION =================
+        function init() {
+            loadStorage();
+            renderCategoryCards();
+            selectCategory('running');
+            calculateBMI();
+            updateTimerUI();
+        }
+
+        // Render the 8 interactive category cards
+        function renderCategoryCards() {
+            const container = document.getElementById('category-cards');
+            container.innerHTML = '';
+
+            Object.values(categoriesData).forEach(cat => {
+                const isSelected = cat.id === activeCategory;
+                const totalSteps = cat.phases.reduce((sum, p) => sum + p.steps.length, 0);
+                const doneSteps = cat.phases.reduce((sum, p) => sum + p.steps.filter(s => completedMap[s.id]).length, 0);
+
+                const card = document.createElement('button');
+                card.onclick = () => selectCategory(cat.id);
+                card.className = `text-left p-3.5 sm:p-4 rounded-2xl border transition-all duration-200 flex flex-col justify-between group ${
+                    isSelected
+                    ? 'bg-cardhover border-emerald-400 shadow-lg shadow-emerald-500/15 ring-1 ring-emerald-400/50'
+                    : 'bg-cardbg/90 border-slate-800 hover:border-slate-700 hover:bg-cardhover/60'
+                }`;
+
+                card.innerHTML = `
+                    <div class="flex items-center justify-between mb-2.5">
+                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br ${cat.gradient} flex items-center justify-center text-white shadow-md">
+                            <i data-lucide="${cat.lucideIcon}" class="w-5 h-5"></i>
+                        </div>
+                        ${doneSteps === totalSteps && totalSteps > 0
+                            ? '<span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">पूरा!</span>'
+                            : isSelected ? '<span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>' : ''
+                        }
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xs sm:text-sm md:text-base text-white group-hover:text-emerald-300 transition leading-snug">
+                            ${cat.shortTitle}
+                        </h3>
+                        <p class="text-[11px] text-slate-400 mt-1">
+                            ${doneSteps}/${totalSteps} स्टेप्स पूरे
+                        </p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            lucide.createIcons();
+        }
+
+        // Select a category
+        function selectCategory(catId) {
+            activeCategory = catId;
+            const cat = categoriesData[catId];
+
+            const iconBox = document.getElementById('active-icon-box');
+            iconBox.className = `w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg bg-gradient-to-br ${cat.gradient}`;
+            iconBox.innerHTML = `<i data-lucide="${cat.lucideIcon}" class="w-8 h-8"></i>`;
+
+            document.getElementById('active-title').textContent = cat.title;
+            document.getElementById('active-badge').textContent = cat.badge;
+            document.getElementById('active-desc').textContent = cat.description;
+
+            updateLevelUI();
+            renderSteps();
+            renderDietTips();
+            updateProgressBar();
+            renderCategoryCards();
+        }
+
+        // Change Difficulty Level
+        function setLevel(lvl) {
+            activeLevel = lvl;
+            updateLevelUI();
+            renderSteps();
+
+            const tips = {
+                beginner: '💡 शुरुआती स्तर: सही फॉर्म और धीमी शुरुआत पर ध्यान दें, जल्दबाजी न करें।',
+                intermediate: '🔥 मध्यम स्तर: सांस की लय बनाए रखें और आराम का समय कम रखें।',
+                advanced: '⚡ एडवांस (Pro) स्तर: पूरी तीव्रता और नियंत्रित गति के साथ लक्ष्य पूरा करें।'
+            };
+            document.getElementById('level-intensity-tip').textContent = tips[lvl];
+            showToast('स्तर अपडेट कर दिया गया है!');
+        }
+
+        function updateLevelUI() {
+            ['beginner', 'intermediate', 'advanced'].forEach(lvl => {
+                const btn = document.getElementById(`btn-${lvl}`);
+                if (lvl === activeLevel) {
+                    btn.className = 'level-btn px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-bold bg-emerald-500 text-slate-950 shadow-md transition-all';
+                } else {
+                    btn.className = 'level-btn px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-slate-400 hover:text-white transition-all';
+                }
+            });
+        }
+
+        // Render Chronological Phases & Steps
+        function renderSteps() {
+            const cat = categoriesData[activeCategory];
+            const container = document.getElementById('steps-container');
+            container.innerHTML = '';
+
+            cat.phases.forEach((phase, pIdx) => {
+                const phaseDiv = document.createElement('div');
+                phaseDiv.className = 'rounded-2xl bg-cardbg border border-slate-800/90 p-5 sm:p-6 shadow-xl';
+
+                const stepsHTML = phase.steps.map((step, sIdx) => {
+                    const isChecked = !!completedMap[step.id];
+                    const currentDuration = step.duration[activeLevel];
+
+                    return `
+                        <div class="p-4 rounded-xl border transition-all duration-200 ${
+                            isChecked
+                            ? 'bg-emerald-950/20 border-emerald-500/40'
+                            : 'bg-slate-900/75 border-slate-800 hover:border-slate-700'
+                        }">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3.5">
+                                <div class="flex items-start gap-3.5">
+                                    <button onclick="toggleStep('${step.id}')" class="mt-0.5 w-6 h-6 rounded-lg flex items-center justify-center border-2 transition shrink-0 ${
+                                        isChecked
+                                        ? 'bg-emerald-500 border-emerald-500 text-slate-950'
+                                        : 'border-slate-600 hover:border-emerald-400 text-transparent'
+                                    }" aria-label="स्टेप पूरा करें">
+                                        <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+                                    </button>
+                                    <div>
+                                        <div class="flex flex-wrap items-center gap-2">
+                                            <span class="text-xs font-extrabold text-emerald-400">स्टेप ${pIdx + 1}.${sIdx + 1}</span>
+                                            <h5 class="font-bold text-sm sm:text-base ${isChecked ? 'line-through text-slate-400' : 'text-white'}">
+                                                ${step.name}
+                                            </h5>
+                                        </div>
+                                        <p class="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
+                                            ${step.detail}
+                                        </p>
+                                        <div class="mt-2 inline-flex items-center gap-1.5 text-[11px] font-medium text-cyan-300 bg-cyan-950/40 px-2.5 py-0.5 rounded-md border border-cyan-800/40">
+                                            <i data-lucide="target" class="w-3 h-3"></i>
+                                            <span>लक्षित अंग/लाभ: ${step.target}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between sm:justify-end gap-2 pl-9 sm:pl-0 shrink-0">
+                                    <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-xs font-bold text-amber-300">
+                                        ${currentDuration}
+                                    </span>
+                                    <button onclick="setTimerPreset(${step.timerSec}, '${step.name}')" class="p-2 rounded-lg bg-slate-800 hover:bg-emerald-500 hover:text-slate-950 text-slate-200 transition" title="इस अभ्यास के लिए टाइमर सेट करें">
+                                        <i data-lucide="timer" class="w-4 h-4"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+
+                phaseDiv.innerHTML = `
+                    <div class="mb-4">
+                        <h4 class="text-base sm:text-xl font-extrabold text-white">${phase.phaseTitle}</h4>
+                        <p class="text-xs sm:text-sm text-slate-400 mt-0.5">${phase.phaseDesc}</p>
+                    </div>
+                    <div class="space-y-3">
+                        ${stepsHTML}
+                    </div>
+                `;
+                container.appendChild(phaseDiv);
+            });
+
+            lucide.createIcons();
+        }
+
+        // Toggle Step Completion
+        function toggleStep(stepId) {
+            completedMap[stepId] = !completedMap[stepId];
+            saveStorage();
+            renderSteps();
+            updateProgressBar();
+            renderCategoryCards();
+
+            if (completedMap[stepId]) {
+                showToast('शाबाश! आपने यह स्टेप पूरा कर लिया है।');
+            }
+        }
+
+        // Update Progress Bar
+        function updateProgressBar() {
+            const cat = categoriesData[activeCategory];
+            const total = cat.phases.reduce((sum, p) => sum + p.steps.length, 0);
+            const done = cat.phases.reduce((sum, p) => sum + p.steps.filter(s => completedMap[s.id]).length, 0);
+            const pct = total === 0 ? 0 : Math.round((done / total) * 100);
+
+            document.getElementById('progress-bar').style.width = `${pct}%`;
+            document.getElementById('progress-text').textContent = `${pct}% पूरा हुआ (${done}/${total} स्टेप्स)`;
+        }
+
+        // Render Category-Specific Diet Tips
+        function renderDietTips() {
+            const cat = categoriesData[activeCategory];
+            const container = document.getElementById('diet-tips-container');
+            container.innerHTML = cat.dietTips.map(tip => `
+                <div class="flex items-start gap-2.5 bg-slate-900/80 p-3 rounded-xl border border-slate-800">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 mt-0.5 shrink-0"></i>
+                    <p class="text-xs leading-relaxed text-slate-300">${tip}</p>
+                </div>
+            `).join('');
+            lucide.createIcons();
+        }
+
+        // Reset All Progress ("नया दिन शुरू करें")
+        function resetAllProgress() {
+            completedMap = {};
+            saveStorage();
+            renderSteps();
+            updateProgressBar();
+            renderCategoryCards();
+            showToast('नया दिन शुरू! सभी स्टेप्स रीसेट कर दिए गए हैं।');
+        }
+
+        // ================= WORKOUT TIMER LOGIC =================
+        function setTimerPreset(seconds, label) {
+            stopTimer();
+            initialTimerSeconds = seconds;
+            timerSeconds = seconds;
+            document.getElementById('timer-label').textContent = label;
+            document.getElementById('timer-status-badge').textContent = 'सेट किया गया';
+            updateTimerUI();
+            showToast(`टाइमर ${seconds} सेकंड के लिए सेट किया गया`);
+        }
+
+        function toggleTimer() {
+            if (isRunning) {
+                stopTimer();
+            } else {
+                startTimer();
+            }
+        }
+
+        function startTimer() {
+            if (timerSeconds <= 0) timerSeconds = initialTimerSeconds;
+            isRunning = true;
+            const btn = document.getElementById('btn-timer-toggle');
+            btn.innerHTML = '<i data-lucide="pause" class="w-4 h-4 fill-slate-950"></i> रोकें';
+            btn.className = 'col-span-2 py-2.5 px-4 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-sm transition flex items-center justify-center gap-2 shadow-lg';
+            document.getElementById('timer-status-badge').textContent = 'चल रहा है...';
+            lucide.createIcons();
+
+            timerInterval = setInterval(() => {
+                timerSeconds--;
+                updateTimerUI();
+                if (timerSeconds <= 0) {
+                    stopTimer();
+                    document.getElementById('timer-status-badge').textContent = 'पूरा हुआ!';
+                    playAlertBeep();
+                    showToast('⏰ समय पूरा हुआ! बहुत बढ़िया!');
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            isRunning = false;
+            clearInterval(timerInterval);
+            const btn = document.getElementById('btn-timer-toggle');
+            btn.innerHTML = '<i data-lucide="play" class="w-4 h-4 fill-slate-950"></i> शुरू करें';
+            btn.className = 'col-span-2 py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/20';
+            if (timerSeconds > 0) {
+                document.getElementById('timer-status-badge').textContent = 'रुका हुआ';
+            }
+            lucide.createIcons();
+        }
+
+        function resetTimer() {
+            stopTimer();
+            timerSeconds = initialTimerSeconds;
+            document.getElementById('timer-status-badge').textContent = 'तैयार है';
+            updateTimerUI();
+        }
+
+        function updateTimerUI() {
+            const m = Math.floor(timerSeconds / 60);
+            const s = timerSeconds % 60;
+            document.getElementById('timer-display').textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+
+        // Web Audio API Beep Alert (No external audio files needed)
+        function playAlertBeep() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(660, ctx.currentTime);
+                gain.gain.setValueAtTime(0.25, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 1);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 1);
+            } catch (e) {}
+        }
+
+        // ================= BMI & CALORIE CALCULATOR =================
+        function calculateBMI() {
+            const hCm = parseFloat(document.getElementById('bmi-height').value);
+            const wKg = parseFloat(document.getElementById('bmi-weight').value);
+            const goal = document.getElementById('bmi-goal').value;
+
+            if (!hCm || !wKg || hCm <= 0 || wKg <= 0) {
+                showToast('कृपया सही लंबाई और वजन दर्ज करें।');
+                return;
+            }
+
+            const hM = hCm / 100;
+            const bmi = (wKg / (hM * hM)).toFixed(1);
+
+            let statusText = '';
+            let statusColor = 'text-emerald-400';
+
+            if (bmi < 18.5) {
+                statusText = 'कम वजन (Underweight)';
+                statusColor = 'text-amber-400';
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                statusText = 'सामान्य वजन (Normal)';
+                statusColor = 'text-emerald-400';
+            } else if (bmi >= 25 && bmi < 29.9) {
+                statusText = 'अधिक वजन (Overweight)';
+                statusColor = 'text-orange-400';
+            } else {
+                statusText = 'मोटापा (Obese)';
+                statusColor = 'text-rose-400';
+            }
+
+            // Base maintenance calories estimate (~31 kcal per kg for active adult)
+            let dailyCalories = Math.round(wKg * 31);
+            if (goal === 'loss') dailyCalories -= 400;
+            if (goal === 'gain') dailyCalories += 400;
+
+            const dailyWater = (wKg * 0.04).toFixed(1);
+
+            const scoreEl = document.getElementById('bmi-score');
+            scoreEl.textContent = `${bmi} (${statusText})`;
+            scoreEl.className = `font-extrabold text-xs sm:text-sm ${statusColor}`;
+
+            document.getElementById('calorie-target').textContent = `${dailyCalories.toLocaleString('en-IN')} kcal / दिन`;
+            document.getElementById('water-target').textContent = `${dailyWater} लीटर / दिन`;
+        }
+
+        // ================= TOAST NOTIFICATION =================
+        let toastTimer;
+        function showToast(message) {
+            const toast = document.getElementById('toast-box');
+            document.getElementById('toast-msg').textContent = message;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3000);
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
